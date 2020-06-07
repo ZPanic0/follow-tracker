@@ -12,6 +12,8 @@ namespace Web.Services.Secrets
             secrets = JsonSerializer.Deserialize<SecretsModel>(File.ReadAllText($@"{Environment.CurrentDirectory}\secrets.json"));
         }
 
+        public string GetConnectionString() => secrets.ConnectionString;
+
         public string GetClientId() => secrets.Twitch.ClientId;
 
         public string GetClientSecret() => secrets.Twitch.ClientSecret;
