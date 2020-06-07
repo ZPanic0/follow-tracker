@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Npgsql;
 using Web.Services.Secrets;
 
 namespace Web
@@ -26,6 +28,7 @@ namespace Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<ISecretsProvider, SecretsProvider>();
+            services.AddSingleton<IDbConnection, NpgsqlConnection>(provider => new NpgsqlConnection(provider.GetService<ISecretsProvider>().GetConnectionString()));
             services.AddMediatR(typeof(CQRS.Identity).Assembly);
             services.AddControllersWithViews();
         }
