@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{998E84C4-F864-4F80-B4D0-55A1A1EA98D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web\Web.csproj", "{998E84C4-F864-4F80-B4D0-55A1A1EA98D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS", "CQRS\CQRS.csproj", "{D61DB122-429D-431F-B329-953F42570B67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{998E84C4-F864-4F80-B4D0-55A1A1EA98D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{998E84C4-F864-4F80-B4D0-55A1A1EA98D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{998E84C4-F864-4F80-B4D0-55A1A1EA98D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D61DB122-429D-431F-B329-953F42570B67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D61DB122-429D-431F-B329-953F42570B67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D61DB122-429D-431F-B329-953F42570B67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D61DB122-429D-431F-B329-953F42570B67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
