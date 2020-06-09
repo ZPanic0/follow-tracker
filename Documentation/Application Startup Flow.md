@@ -1,0 +1,14 @@
+# Application Start
+- Fetch all 'New Follow' and 'State Change' subscriptions.
+- For each subscription,
+	- Check if the expire time is within 1 day
+		- If so, 
+			- Resubscribe
+			- Update subscription in database
+		- If not, 
+			- Continue
+- Load each subscription into background task, set to run 1 day before expiration.
+	- When event fires, 
+		- Resubscribe
+		- Update subscription in database
+		- Requeue subscription to run 1 day before expiration

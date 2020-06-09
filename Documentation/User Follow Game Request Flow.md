@@ -1,0 +1,12 @@
+# User Requests Game Follower 'Followed' During
+- Given target user's login name,
+    - Request user id with name via [api](https://dev.twitch.tv/docs/api/reference#get-users)
+    - Get most recent follow incident of the returned user id from database
+        - ex. SELECT TOP 1 json FROM webhook_data WHERE user_id = @user_id ORDER BY date_created DESCENDING
+    - Get last state change before most recent follow incident date from database
+    - If a game id is in returned state change data,
+        - Get game name from id via [api](https://dev.twitch.tv/docs/api/reference#get-games)
+        - Return game name, date_created
+    - If no game id is in returned state,
+        - Append message that stream was offline or game data was not provided
+        - Return date_created
