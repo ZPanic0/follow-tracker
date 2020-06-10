@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Npgsql;
+using Web.Services.AsyncQueue;
+using Web.Services.AsyncQueue.Models;
 using Web.Services.Secrets;
 
 namespace Web
@@ -29,6 +31,7 @@ namespace Web
         {
             services.AddSingleton<ISecretsProvider, SecretsProvider>();
             services.AddSingleton<IDbConnection, NpgsqlConnection>(provider => new NpgsqlConnection(provider.GetService<ISecretsProvider>().GetConnectionString()));
+            services.AddSingleton<IAsyncQueue<WebhookWorkItem>, AsyncQueue<WebhookWorkItem>>();
             services.AddMediatR(typeof(CQRS.Identity).Assembly);
             services.AddControllersWithViews();
         }
