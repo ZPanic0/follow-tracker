@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Services.BackgroundServices;
 
 namespace Web
 {
@@ -25,7 +26,7 @@ namespace Web
                 })
                 .ConfigureServices(services =>
                 {
-                    services.AddHostedService<BackgroundService>();
+                    services.AddHostedService<BackgroundRequestService>();
                 });
     }
 }

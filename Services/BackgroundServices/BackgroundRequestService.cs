@@ -6,21 +6,21 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Web
+namespace Services.BackgroundServices
 {
-    public class BackgroundService : IHostedService
+    public class BackgroundRequestService : IHostedService
     {
         private readonly IAsyncQueue<IBackgroundQueueItem> queue;
         private readonly IMediator mediator;
 
-        public BackgroundService(IAsyncQueue<IBackgroundQueueItem> queue, IMediator mediator)
+        public BackgroundRequestService(IAsyncQueue<IBackgroundQueueItem> queue, IMediator mediator)
         {
             this.queue = queue;
             this.mediator = mediator;
         }
         public async Task StartAsync(CancellationToken cancellationToken)
         {
-            Console.WriteLine($"{nameof(BackgroundService)} started!");
+            Console.WriteLine($"{nameof(BackgroundRequestService)} started!");
 
             await foreach (var item in queue)
             {
@@ -30,7 +30,7 @@ namespace Web
 
         public Task StopAsync(CancellationToken cancellationToken)
         {
-            Console.WriteLine($"{nameof(BackgroundService)} stopping!");
+            Console.WriteLine($"{nameof(BackgroundRequestService)} stopping!");
 
             return Task.CompletedTask;
         }
