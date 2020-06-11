@@ -1,4 +1,6 @@
-﻿namespace Web.Services.AsyncQueue.Models
+﻿using CQRS.Common;
+
+namespace Web.Services.AsyncQueue.Models
 {
     public struct WebhookWorkItem
     {
