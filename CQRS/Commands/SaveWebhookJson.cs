@@ -5,7 +5,7 @@ using System.Data;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CQRS.Queries
+namespace CQRS.Commands
 {
     public static class SaveWebhookJson
     {

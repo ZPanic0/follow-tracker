@@ -1,5 +1,5 @@
-﻿using CQRS.Common;
-using CQRS.Queries;
+﻿using CQRS.Commands;
+using CQRS.Common;
 using Dapper;
 using FluentAssertions;
 using System;

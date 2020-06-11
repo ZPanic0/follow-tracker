@@ -1,4 +1,4 @@
-﻿using CQRS.Queries;
+﻿using CQRS.Commands;
 using MediatR;
 using Microsoft.Extensions.Hosting;
 using System;
