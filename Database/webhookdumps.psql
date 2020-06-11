@@ -1,0 +1,8 @@
+﻿CREATE TABLE public.webhookdumps
+(
+    id serial PRIMARY KEY,
+    webhooktypeid smallint NOT NULL,
+    userid integer NOT NULL REFERENCES "user"(id),
+    datecreated timestamp without time zone NOT NULL DEFAULT TIMEZONE('utc', Now()),
+    jsondata jsonb NOT NULL
+)

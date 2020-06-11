@@ -1,0 +1,6 @@
+﻿CREATE TABLE public."user"
+(
+    id serial PRIMARY KEY,
+    twitchuserid integer NOT NULL,
+    guid varchar(36) NOT NULL
+)
