@@ -1,4 +1,4 @@
-﻿namespace Web.Services.Secrets.Models
+﻿namespace Services.Secrets.Models
 {
     public class Twitch
     {

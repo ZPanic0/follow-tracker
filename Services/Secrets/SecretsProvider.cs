@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Services.Secrets.Models;
+using System;
 using System.IO;
 using System.Text.Json;
 
-namespace Web.Services.Secrets
+namespace Services.Secrets
 {
     public class SecretsProvider : ISecretsProvider
     {

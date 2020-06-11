@@ -1,4 +1,4 @@
-﻿namespace Web.Services.Secrets
+﻿namespace Services.Secrets
 {
     public interface ISecretsProvider
     {

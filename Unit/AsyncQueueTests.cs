@@ -2,7 +2,7 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Web.Services.AsyncQueue;
+using Services.AsyncQueue;
 using Xunit;
 
 namespace Unit

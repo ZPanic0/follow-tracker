@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks.Dataflow;
 
-namespace Web.Services.AsyncQueue
+namespace Services.AsyncQueue
 {
     public class AsyncQueue<T> : IAsyncEnumerable<T>, IAsyncQueue<T>
     {

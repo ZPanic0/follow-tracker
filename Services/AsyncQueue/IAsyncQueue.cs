@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
 
-namespace Web.Services.AsyncQueue
+namespace Services.AsyncQueue
 {
     public interface IAsyncQueue<T>
     {

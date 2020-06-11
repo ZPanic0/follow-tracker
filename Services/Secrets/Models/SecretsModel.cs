@@ -1,6 +1,4 @@
-﻿using Web.Services.Secrets.Models;
-
-namespace Web.Services.Secrets
+﻿namespace Services.Secrets.Models
 {
     public class SecretsModel
     {
