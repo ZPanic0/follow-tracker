@@ -1,4 +1,4 @@
-﻿namespace Web.Services.AsyncQueue.Models
+﻿namespace CQRS.Common
 {
     public enum WebhookType
     {
