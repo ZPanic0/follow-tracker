@@ -33,7 +33,7 @@ namespace Web
             services.AddSingleton<IDbConnection, NpgsqlConnection>(provider => new NpgsqlConnection(provider.GetService<ISecretsProvider>().GetConnectionString()));
             services.AddSingleton<IAsyncQueue<IBackgroundQueueItem>, AsyncQueue<IBackgroundQueueItem>>();
             services.AddMediatR(typeof(CQRS.Identity).Assembly);
-            services.AddControllersWithViews();
+            services.AddControllersWithViews(configuration => configuration.Filters.Add<ExceptionLoggingFilter>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
