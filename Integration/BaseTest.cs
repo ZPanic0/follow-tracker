@@ -21,6 +21,7 @@ namespace Integration
 
         private void ClearTables() => Connection.Execute(@"
             DELETE FROM webhookdumps;
+            DELETE FROM webhooksubscriptions;
             DELETE FROM ""user"";
         ");
     }

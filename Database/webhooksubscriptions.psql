@@ -1,0 +1,11 @@
+﻿CREATE TABLE public.webhooksubscriptions
+(
+    id serial PRIMARY KEY,
+    webhooktypeid smallint NOT NULL,
+    userid integer NOT NULL REFERENCES "user"(id),
+	jsondata jsonb NOT NULL,
+	secret varchar(36) NOT NULL,
+    datecreated timestamp without time zone NOT NULL DEFAULT timezone('utc', now()),
+	datelastupdated timestamp without time zone NOT NULL DEFAULT timezone('utc', now()),
+	dateexpires timestamp without time zone NOT NULL
+)
