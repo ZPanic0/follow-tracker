@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Dapper;
+using Newtonsoft.Json;
 using Npgsql;
 using System.Data;
 using System.IO;
@@ -9,10 +10,18 @@ namespace Integration
     [Collection("Integration")]
     public abstract class BaseTest
     {
-        public IDbConnection GetConnection()
+        public IDbConnection Connection { get; }
+
+        public BaseTest()
         {
             var secrets = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("secrets.json"));
-            return new NpgsqlConnection((string)secrets.ConnectionString);
+            Connection = new NpgsqlConnection((string)secrets.ConnectionString);
+            ClearTables();
         }
+
+        private void ClearTables() => Connection.Execute(@"
+            DELETE FROM webhookdumps;
+            DELETE FROM ""user"";
+        ");
     }
 }

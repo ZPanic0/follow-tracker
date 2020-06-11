@@ -1,6 +1,5 @@
 ﻿using Dapper;
 using FluentAssertions;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Integration
@@ -8,9 +7,9 @@ namespace Integration
     public class DatabaseConnectionTests : BaseTest
     {
         [Fact]
-        public async Task CanQueryDatabase()
+        public void CanQueryDatabase()
         {
-            (await GetConnection().QueryFirstAsync<int>("SELECT 1;")).Should().Be(1);
+            Connection.QueryFirst<int>("SELECT 1;").Should().Be(1);
         }
     }
 }
